@@ -1,0 +1,13 @@
+---
+
+- name: "Validate arguments"
+  fail:
+    msg: '`env_name` must be defined. Please, include --extra-vars "env_name=<name>" on Ansible command'
+  when: env_name is not defined
+
+- name: Load cluster data
+  include_vars:
+    file: "kops-clusters/{{ env_name }}.yaml"
+
+- set_fact:
+    cluster_full_name: "{{ cluster_name | quote }}.{{ dns_zone | default('k8s.local') }}"

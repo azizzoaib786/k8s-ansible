@@ -1,0 +1,17 @@
+---
+aws_region: 'eu-west-1'
+aws_zones: 'eu-west-1a,eu-west-1b,eu-west-1c'
+
+kops_state_bucket: kops-state-bkt
+
+master_size: t2.medium
+master_volume_size: 50
+master_count: 1
+
+node_size: t2.medium
+nodes_count: 3
+node_volume_size: 50
+
+dns_zone: example.com
+
+kube_version: 1.10.7

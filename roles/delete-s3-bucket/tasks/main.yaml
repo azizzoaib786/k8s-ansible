@@ -1,0 +1,11 @@
+---
+
+- name: Load cluster data
+  include_vars:
+    file: "kops-clusters/{{ env_name }}.yaml"
+
+- s3_bucket:
+    name: "{{ kops_state_bucket | replace('s3://', '') }}"
+    state: absent
+    region: "{{ aws_region }}"
+    force: yes

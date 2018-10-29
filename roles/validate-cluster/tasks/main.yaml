@@ -1,0 +1,18 @@
+---
+
+- include_role:
+    name: base
+
+- name: "Validate command"
+  debug:
+    msg: "kops validate cluster --name {{ cluster_full_name }} --state=s3://{{ kops_state_bucket | quote }}"
+
+# - name: "Validate cluster {{ cluster_name }}"
+#   shell: >
+#     kops validate cluster
+#     --name {{ cluster_full_name }}
+#     --state=s3://{{ kops_state_bucket | quote }}
+#   register: kops_validate_output
+
+# - debug:
+#     var: kops_validate_output.stdout_lines

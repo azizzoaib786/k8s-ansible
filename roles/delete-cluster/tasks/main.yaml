@@ -1,0 +1,10 @@
+---
+
+- include_role:
+    name: base
+
+- name: "Delete cluster {{ cluster_full_name }}"
+  shell: >
+    kops delete cluster {{ cluster_full_name }}
+    --state s3://{{ kops_state_bucket | quote }}
+    --yes

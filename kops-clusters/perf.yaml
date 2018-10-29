@@ -1,0 +1,13 @@
+---
+cluster_name: perftestk8s
+
+aws_region: eu-west-2
+aws_zones: eu-west-2a,eu-west-2b,eu-west-2c
+
+master_size: t2.large
+master_volume_size: 50
+master_count: 1
+
+node_size: t2.large
+nodes_count: 3
+node_volume_size: 50

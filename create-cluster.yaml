@@ -1,0 +1,7 @@
+---
+
+- hosts: localhost
+  connection: local
+  roles:
+    - create-s3-bucket
+    - create-cluster

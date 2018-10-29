@@ -1,0 +1,10 @@
+---
+
+- include_role:
+    name: base
+
+- s3_bucket:
+    name: "{{ kops_state_bucket | replace('s3://', '') }}"
+    state: present
+    region: "{{ aws_region }}"
+    versioning: no
